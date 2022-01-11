@@ -12,17 +12,19 @@ const Home = () => {
   const [pokemons, setPokemons] = useState([]);
 
   const loadMore = () => {
-    axios
-      .get(`${API_URL}?limit=40`)
-      .then((res) => setPokemons(res.data.results))
-      .catch((err) => console.error);
+    useInitialLoad(API_URL, 40)
   };
 
-  useEffect(() => {
+  //########## Custom Hook ##########
+  function useInitialLoad(url, limit=20) {
     axios
-      .get(API_URL)
+      .get(`${url}?limit=${limit}`)
       .then((res) => setPokemons(res.data.results))
       .catch((err) => console.error);
+  }
+
+  useEffect(() => {
+    useInitialLoad(API_URL)
   }, []);
 
   return (
