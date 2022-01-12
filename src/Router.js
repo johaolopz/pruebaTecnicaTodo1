@@ -4,12 +4,17 @@ import Pokemon from "./Pokemon";
 import TermsAndConditions from "./TermsAndConditions";
 import Home from "./Home";
 
+import MoveDetails from "./MoveDetails";
+
 const Router = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/pokemon/:name">
+        <Route exact path="/pokemon/:name">
           <Pokemon />
+        </Route>
+        <Route path="/pokemon/:name/moves/:move">
+          <MoveDetails />
         </Route>
         <Route path="/terms-conditions">
           <TermsAndConditions />

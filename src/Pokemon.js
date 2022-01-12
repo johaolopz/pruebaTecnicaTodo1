@@ -4,6 +4,8 @@ import { Typography } from "@material-ui/core";
 
 import { useState, useEffect } from "react";
 
+import { Link } from "react-router-dom";
+
 import axios from "axios";
 
 const API_URL = "https://pokeapi.co/api/v2/pokemon/"
@@ -21,7 +23,10 @@ const Pokemon = () => {
       .get(`${API_URL}${name}`)
       .then((res) => setPokeDetails({
         img : res.data.sprites.other.dream_world.front_default,
-        moves : res.data.moves.map((obj)=>obj.move.name),
+        moves : res.data.moves.map((obj) =>
+                {
+                  return {name:obj.move.name, url:obj.move.url}
+                }),
         types : res.data.types.map((obj)=>obj.type.name)
       }))
       .catch((err) => console.error);
@@ -38,8 +43,13 @@ const Pokemon = () => {
       <h3>Moves:</h3>
         <ul>
             {
-              pokeDetails.moves.map((move)=>(
-                <li key={move}>{move}</li>
+              pokeDetails.moves.map((obj)=>(
+                <li key={obj.name}>
+                  <Link to={{
+                    pathname: `/pokemon/${name}/moves/${obj.name}`,
+                    search: obj.url}}
+                  >{obj.name}</Link>
+                </li>
               ))
             }
         </ul>
