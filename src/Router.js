@@ -6,10 +6,12 @@ import Home from "./Home";
 import Error404 from "./Error404";
 
 import MoveDetails from "./MoveDetails";
+import Breadcrumbs from "./Breadcrumbs";
 
 const Router = () => {
   return (
     <BrowserRouter>
+      <Breadcrumbs />
       <Switch>
         <Route exact path="/pokemon/:name">
           <Pokemon />
