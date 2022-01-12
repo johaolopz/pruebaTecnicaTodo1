@@ -47,7 +47,7 @@ const Pokemon = () => {
                 <li key={obj.name}>
                   <Link to={{
                     pathname: `/pokemon/${name}/moves/${obj.name}`,
-                    search: obj.url}}
+                    url: obj.url}}
                   >{obj.name}</Link>
                 </li>
               ))

@@ -4,8 +4,7 @@ import axios from "axios";
 
 export default function MoveDetails() {
     let {name, move} = useParams()
-    let { search } = useLocation()
-    const url = search.slice(1,-1)
+    let { url } = useLocation()
 
     const [details, setDetails] = useState({
         accuracy : '',
