@@ -1,6 +1,6 @@
 import { Container } from "@material-ui/core";
 
-import Router from "./Router";
+import Router from "./router/Router";
 
 const App = () => {
   return (
