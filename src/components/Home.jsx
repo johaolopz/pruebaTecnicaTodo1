@@ -11,7 +11,7 @@ import useInitialLoad from "../hooks/useInitialLoad";
 import '../styles/global.css'
 import bodyHtmlConfig from "../utils/bodyHtmlConfig"
 import bg_Home from '../img/bg_Home.jpg';
-import SvgIcon from '@mui/material/SvgIcon';
+import pokeball from '../img/pokeball.svg'
 
 //Configuración del Componente Item de Material UI
 const Item = styled(Paper)(({ theme }) => ({
@@ -40,11 +40,9 @@ const Home = () => {
   return (
     <div className="mainItemsContainer">
       <AppBar className='AppBar' position="static">
-        <Toolbar>
+        <Toolbar className="Toolbar">
           <Typography component="h1">POKEDEX</Typography>
-          <SvgIcon>
-            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-          </SvgIcon>
+          <img className="pokeball" src={pokeball} alt="pokeball"/>
         </Toolbar>
       </AppBar>
       <Pagination />

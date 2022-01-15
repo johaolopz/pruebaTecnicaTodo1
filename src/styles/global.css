@@ -8,6 +8,16 @@
     margin-bottom: 5px;
 }
 
+.Toolbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pokeball{
+    height: 60px;
+    width: 60px;
+}
+
 .pokemonName {
     text-decoration: none;
 }
