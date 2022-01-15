@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "@material-ui/core"
-import "../styles/global.css"
 import { useSelector, useDispatch } from "react-redux"
 import { setUrl, setNumber } from "../redux/actions"
+import '../styles/pagination.css'
 
 export default function Pagination() {
     const dispatch = useDispatch()

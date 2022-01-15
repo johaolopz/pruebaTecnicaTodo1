@@ -1,12 +1,23 @@
-.buttonContainer {
-    display: flex;
-    flex-direction: row;
-    margin-top: 5px;
-    height: 30px;
-}
-
 .number {
     margin: auto 10px;
     font-size: 1.3rem;
     font-weight: bold;
+}
+
+.AppBar {
+    margin-bottom: 5px;
+}
+
+.pokemonName {
+    text-decoration: none;
+}
+
+.pokemonContainer {
+    width: 250px;
+}
+
+.mainItemsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

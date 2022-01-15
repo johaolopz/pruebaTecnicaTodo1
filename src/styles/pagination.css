@@ -1,0 +1,10 @@
+.buttonContainer {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    height: 30px;
+}
+
+#loadButton {
+    margin-top: 10px;
+}

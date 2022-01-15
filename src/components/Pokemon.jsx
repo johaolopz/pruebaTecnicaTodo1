@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 
-import { Typography } from "@material-ui/core";
+import { Typography, AppBar, Toolbar } from "@material-ui/core";
 
 import React, { useState, useEffect } from "react";
 
@@ -38,7 +38,11 @@ const Pokemon = () => {
 
   return (
     <div>
-      <Typography component="h1">{name.toUpperCase()}</Typography>
+      <AppBar className='AppBar' position="static">
+        <Toolbar>
+          <Typography component="h1">{name.toUpperCase()}</Typography>
+        </Toolbar>
+      </AppBar>
       <img src={pokeDetails.img} alt="Pokeimage"/>
       <h3>Moves:</h3>
         <ul>

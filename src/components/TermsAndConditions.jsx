@@ -1,10 +1,13 @@
-import { Typography } from "@material-ui/core";
+import { Typography, AppBar, Toolbar } from "@material-ui/core";
 
 const TermsAndConditions = () => {
   return (
     <div>
-      <Typography component="h1">Terms & Conditions</Typography>
-
+      <AppBar position="static">
+        <Toolbar>
+          <Typography component="h1">Terms & Conditions</Typography>
+        </Toolbar>
+      </AppBar>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
         nibh dolor, accumsan sit amet rutrum in, elementum sed neque. Ut vitae
