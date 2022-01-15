@@ -11,6 +11,7 @@ import useInitialLoad from "../hooks/useInitialLoad";
 import '../styles/global.css'
 import bodyHtmlConfig from "../utils/bodyHtmlConfig"
 import bg_Home from '../img/bg_Home.jpg';
+import SvgIcon from '@mui/material/SvgIcon';
 
 //Configuración del Componente Item de Material UI
 const Item = styled(Paper)(({ theme }) => ({
@@ -41,13 +42,16 @@ const Home = () => {
       <AppBar className='AppBar' position="static">
         <Toolbar>
           <Typography component="h1">POKEDEX</Typography>
+          <SvgIcon>
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+          </SvgIcon>
         </Toolbar>
       </AppBar>
       <Pagination />
       <Stack className="pokemonContainer" spacing={1}>
         {pokemons.map((pokemon, index) => (
           <Link key={index} className="pokemonName" to={`/pokemon/${pokemon.name}`}>
-            <Item elevation={12} >
+            <Item elevation={12} className="Item">
               {pokemon.name}
             </Item>
           </Link>

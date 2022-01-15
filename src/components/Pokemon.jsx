@@ -8,6 +8,10 @@ import { Link } from "react-router-dom";
 
 import axios from "axios";
 
+import bodyHtmlConfig from "../utils/bodyHtmlConfig"
+import bg_Home from "../img/bg_Home.jpg"
+import "../styles/pokemon.css"
+
 const API_URL = "https://pokeapi.co/api/v2/pokemon/"
 
 const Pokemon = () => {
@@ -32,39 +36,45 @@ const Pokemon = () => {
       .catch((err) => console.error);
   }
 
+  //Actualiza el background
+  bodyHtmlConfig(bg_Home)
+
   useEffect(() => {
     getDetails()
   },[])
 
   return (
-    <div>
+    <div className="pokeContainer">
       <AppBar className='AppBar' position="static">
         <Toolbar>
           <Typography component="h1">{name.toUpperCase()}</Typography>
         </Toolbar>
       </AppBar>
-      <img src={pokeDetails.img} alt="Pokeimage"/>
-      <h3>Moves:</h3>
-        <ul>
-            {
-              pokeDetails.moves.map((obj)=>(
-                <li key={obj.name}>
-                  <Link to={{
-                    pathname: `/pokemon/${name}/moves/${obj.name}`,
-                    url: obj.url}}
-                  >{obj.name}</Link>
-                </li>
-              ))
-            }
-        </ul>
-      <h3>Types:</h3>
-        <ul>
-            {
-              pokeDetails.types.map((type)=>(
-                <li key={type}>{type}</li>
-              ))
-            }
-        </ul>
+      <div>
+        <img className="pokemonImage" src={pokeDetails.img} alt="Pokeimage"/>
+        <h2>Moves:</h2>
+          <ul className="ulPokeList">
+              {
+                pokeDetails.moves.map((obj)=>(
+                  <li key={obj.name}>
+                    <Link to={{
+                      pathname: `/pokemon/${name}/moves/${obj.name}`,
+                      url: obj.url}}
+                      className="moveLink"
+                    >{obj.name}</Link>
+                  </li>
+                ))
+              }
+          </ul>
+        <h2>Types:</h2>
+          <ul className="ulPokeList">
+              {
+                pokeDetails.types.map((type)=>(
+                  <li key={type} className="typeName">{type}</li>
+                ))
+              }
+          </ul>
+      </div>
     </div>);
 };
 

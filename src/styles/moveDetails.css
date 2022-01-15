@@ -1,0 +1,40 @@
+.detailsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.boardDetails {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    border: 2px solid yellow;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 172, 0.609);
+    color: white;
+    line-height: 0.85;
+}
+
+.divTitles {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titles {
+    text-shadow: 0 0 12px rgba(255, 251, 0, 0.788);
+    margin: auto;
+}
+
+.divTitles p {
+    font-weight: bold;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 3px;
+    height: 22px;
+    width: 50px;
+    background-color: red;
+    padding-top: 8px;
+}

@@ -12,7 +12,13 @@
     text-decoration: none;
 }
 
+.Item:hover{
+    background-color: red;
+    color: white;
+}
+
 .pokemonContainer {
+    margin-top: -90px;
     width: 250px;
 }
 
@@ -20,4 +26,37 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.footerUl{
+    list-style: none;
+}
+
+.linksFooter{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    line-height: 1.7;
+    color:white;
+    font-weight: bold;
+    font-size: large;
+    text-shadow: 0 0 5px rgb(0, 255, 21);
+}
+
+.linksFooter:hover{
+    color:rgb(174, 0, 255);
+    text-shadow: 0 0 1px black;
+}
+
+footer{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    bottom: 0;
+    width: 95%;
+}
+
+.divError404{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

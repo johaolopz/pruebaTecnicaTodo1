@@ -1,6 +1,12 @@
 import { Typography, AppBar, Toolbar } from "@material-ui/core";
+import bodyHtmlConfig from "../utils/bodyHtmlConfig"
+import bg_Home from "../img/bg_Home.jpg"
 
 const TermsAndConditions = () => {
+
+  //Actualiza el background
+  bodyHtmlConfig(bg_Home)
+
   return (
     <div>
       <AppBar position="static">

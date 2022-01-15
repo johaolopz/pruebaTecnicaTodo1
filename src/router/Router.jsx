@@ -7,6 +7,9 @@ import Error404 from "../components/Error404";
 
 import MoveDetails from "../components/MoveDetails";
 import Breadcrumbs from "../components/Breadcrumbs";
+import { SvgIcon } from "@mui/material";
+import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
+import "../styles/global.css"
 
 const Router = () => {
   return (
@@ -30,12 +33,21 @@ const Router = () => {
         </Route>
       </Switch>
       <footer>
-        <ul>
+        <hr/>
+        <ul className="footerUl">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" className="linksFooter">
+              <SvgIcon>
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+              </SvgIcon>
+              <span>Home</span>
+            </Link>
           </li>
           <li>
-            <Link to="/terms-conditions">Terms & Conditions</Link>
+            <Link to="/terms-conditions" className="linksFooter">
+              <HistoryEduIcon />
+              <span>Terms & Conditions</span>
+            </Link>
           </li>
         </ul>
       </footer>
